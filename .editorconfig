@@ -1,0 +1,19 @@
+# Robotico.Mapper — EditorConfig
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{cs,csx}]
+dotnet_sort_system_directives_first = true
+# Enforce braces for all control blocks
+csharp_prefer_braces = true:warning
+# CA2007: Do not directly await a Task (use ConfigureAwait in library code)
+dotnet_diagnostic.CA2007.severity = warning
+# CA1305: Specify IFormatProvider for culture-dependent operations (culture-explicit).
+dotnet_diagnostic.CA1305.severity = warning
