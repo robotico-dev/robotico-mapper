@@ -4,15 +4,24 @@
     <AssemblyName>Robotico.Mapper.Tests</AssemblyName>
     <PackageId>Robotico.Mapper.Tests</PackageId>
     <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-    <!-- CA1707: Test method names use underscores. CA1515: Public test classes for discovery. -->
-    <NoWarn>$(NoWarn);CA1707;CA1515</NoWarn>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+    <NoWarn>$(NoWarn);IDE0005</NoWarn>
+    <IsTestProject>true</IsTestProject>
+    <!-- CA1707/CA1515: Test naming and discovery. CA2007/CA1859: Test code. -->
+    <NoWarn>$(NoWarn);CA1707;CA1515;CA2007;CA1859</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-    <PackageReference Include="xunit" Version="2.9.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="coverlet.collector">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Robotico.Mapper\Robotico.Mapper.csproj" />
